@@ -15,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({ title, onBackPress, imageSource }) => {
                     <Text style={styles.backText}>←</Text>
                 </TouchableOpacity>
             ) : (
-                <View style={{ width: 32 }} /> // giữ layout cân đối nếu không có nút back
+                <View style={{ width: 32 }} />
             )}
 
             {title ? (
@@ -25,9 +25,9 @@ const Header: React.FC<HeaderProps> = ({ title, onBackPress, imageSource }) => {
             )}
 
             {imageSource ? (
-                <Image source={imageSource} style={styles.image} resizeMode="contain" />
+                <Image source={imageSource} style={styles.image} />
             ) : (
-                <View style={{ width: 32 }} /> // giữ layout cân đối nếu không có image
+                <View style={{ width: 32 }} />
             )}
         </View>
     );
@@ -64,5 +64,6 @@ const styles = StyleSheet.create({
     image: {
         width: 32,
         height: 32,
+        borderRadius: 16,
     },
 });
