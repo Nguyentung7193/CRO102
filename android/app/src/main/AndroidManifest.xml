@@ -1,6 +1,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Quyền dùng camera -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Quyền đọc ảnh từ thư viện (Android < 13) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- Quyền lưu ảnh (Android < 13) -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+                 android:maxSdkVersion="28" />
+
+    <!-- Android 13+ (API 33) trở lên: dùng quyền mới -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
 
     <application
       android:name=".MainApplication"

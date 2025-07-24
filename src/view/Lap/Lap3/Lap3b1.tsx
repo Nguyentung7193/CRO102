@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Button, Image, TouchableOpacity } from 'react-native';
 import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
 
 const Lap3b1 = () => {
@@ -21,7 +21,7 @@ const Lap3b1 = () => {
       <TouchableOpacity onPress={moveImage} activeOpacity={0.8}>
         <Animated.View style={[styles.imageBox, animatedStyle]}>
           <Image
-            source={require('../../../assets/raiden.webp')}
+             source={{ uri: 'https://i.imgur.com/0y8Ftya.jpg' }}
             style={styles.image}
             resizeMode="cover"
           />

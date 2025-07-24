@@ -10,7 +10,7 @@ const Header: React.FC<HeaderProps> = React.memo(({ user }) => {
     return (
         <View style={styles.header}>
             <Image
-                source={user.avatar ? { uri: user.avatar } : require('../../../assets/raiden.webp')}
+                source={user.avatar ? { uri: user.avatar } : { uri: 'https://i.imgur.com/0y8Ftya.jpg' }}
                 style={styles.avatar}
             />
             <View>

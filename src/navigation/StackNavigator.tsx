@@ -8,6 +8,8 @@ import demoAnimation from '../demo/sl3/demoAnimation';
 import Lap3b1 from '../view/Lap/Lap3/Lap3b1';
 import Lap3b2 from '../view/Lap/Lap3/Lap3b2';
 import Lap3b3 from '../view/Lap/Lap3/Lap3b3';
+import CameraComponent from '../demo/sl4/CameraComponent';
+import MusicPlayerScreen from '../demo/sl4/ MusicPlayerScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -17,10 +19,10 @@ export type RootStackParamList = {
   Lap3b1: undefined;
   Lap3b2: undefined;
   Lap3b3: undefined;
-
-
   // demo
   demoAnimation: undefined;
+  CameraComponent: undefined;
+  MusicPlayer: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -34,11 +36,11 @@ const StackNavigator = () => {
       <Stack.Screen name="Lap3b1" component={Lap3b1} />
       <Stack.Screen name="Lap3b2" component={Lap3b2} />
       <Stack.Screen name="Lap3b3" component={Lap3b3} />
-      
-      {/* Add other screens here as needed */}
-      {/* demo */}
-      <Stack.Screen name="demoAnimation" component={demoAnimation} />
-      {/* Add other screens here as needed */}
+      {/* slide 3 */}
+      <Stack.Screen name="demoAnimation" component={demoAnimation} /> 
+      {/* slide 4 */}
+      <Stack.Screen name="CameraComponent" component={CameraComponent} />
+      <Stack.Screen name="MusicPlayer" component={MusicPlayerScreen} />
     </Stack.Navigator>
   );
 };

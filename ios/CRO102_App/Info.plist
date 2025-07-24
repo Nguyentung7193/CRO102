@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>App cần quyền để chọn ảnh từ thư viện</string>
+	<!-- cap quyen chon anh tu thu vien -->
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>App cần quyền để mở máy ảnh</string>
+	<!-- Thu vien chup anh -->
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

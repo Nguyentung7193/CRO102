@@ -35,50 +35,53 @@ const Lap3b3 = () => {
     outputRange: [1, 0],
     extrapolate: 'clamp',
   });
-  const nameTranslateX = scrollY.interpolate({
-  inputRange: [0, HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT],
-  outputRange: [0, -100],
-  extrapolate: 'clamp',
-});
+
   const renderItem = ({ item, index }: { item: { id: string; title: string }; index: number }) => {
-  const inputRange = [-1, 0, 80 * index, 80 * (index + 2)];
-  const opacity = scrollY.interpolate({
-    inputRange,
-    outputRange: [1, 1, 1, 0],
-  });
-  const translateY = scrollY.interpolate({
-    inputRange,
-    outputRange: [0, 0, 0, 20],
-  });
-  const scale = scrollY.interpolate({
-    inputRange,
-    outputRange: [1, 1, 1, 0.5],
-  });
+    const inputRange = [-1, 0, 80 * index, 80 * (index + 2)];
+    const opacity = scrollY.interpolate({
+      inputRange,
+      outputRange: [1, 1, 1, 0],
+    });
+    const translateY = scrollY.interpolate({
+      inputRange,
+      outputRange: [0, 0, 0, 20],
+    });
+    const scale = scrollY.interpolate({
+      inputRange,
+      outputRange: [1, 1, 1, 0.5],
+    });
 
-
-  return (
-    <Animated.View style={[
-      styles.item,
-      { opacity, transform: [{ translateY }, { scale }] }
-    ]}>
-      <Text style={styles.title}>{item.title}</Text>
-    </Animated.View>
-  );
-};
+    return (
+      <Animated.View style={[
+        styles.item,
+        { opacity, transform: [{ translateY }, { scale }] }
+      ]}>
+        <View style={styles.itemContent}>
+          <Text style={styles.itemNumber}>#{index + 1}</Text>
+          <View style={styles.itemTextContainer}>
+            <Text style={styles.title}>{item.title}</Text>
+            <Text style={styles.subtitle}>Click for more details →</Text>
+          </View>
+        </View>
+      </Animated.View>
+    );
+  };
 
   return (
     <View style={styles.container}>
       <Animated.View style={[styles.header, { height: headerHeight }]}>
-        <Animated.Image
-          source={USER.avatar}
-          style={[styles.avatar, { opacity: avatarOpacity }]}
-        />
-        <Animated.Text style={[styles.greeting, { opacity: greetingOpacity }]}>
-          Xin chào
-        </Animated.Text>
-        <Animated.Text style={[styles.name, {
-      transform: [{ translateX: nameTranslateX }],
-    }]}>{USER.name}</Animated.Text>
+        <View style={styles.headerContent}>
+          <Animated.Image
+            source={{ uri: 'https://i.imgur.com/0y8Ftya.jpg' }}
+            style={[styles.avatar, { opacity: avatarOpacity }]}
+          />
+          <View style={styles.textContainer}>
+            <Animated.Text style={[styles.greeting, { opacity: greetingOpacity }]}>
+              Xin chào
+            </Animated.Text>
+            <Text style={styles.name}>{USER.name}</Text>
+          </View>
+        </View>
       </Animated.View>
       <Animated.FlatList
         data={DATA}
@@ -106,17 +109,24 @@ const styles = StyleSheet.create({
   header: {
     width: '100%',
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'flex-end', // Đảm bảo các thành phần nằm phía dưới header
+    justifyContent: 'flex-end',
     borderBottomWidth: 1,
     borderBottomColor: '#eee',
     overflow: 'hidden',
+    paddingHorizontal: 16,
+  },
+  headerContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  textContainer: {
+    marginLeft: 16,
   },
   avatar: {
     width: 80,
     height: 80,
     borderRadius: 40,
-    marginBottom: 8,
     backgroundColor: '#eee',
   },
   greeting: {
@@ -128,28 +138,45 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
     color: '#222',
-    marginBottom: 12, // Thêm margin để không bị cắt
   },
   item: {
-    height: 64,
+    height: 80,
     marginHorizontal: 16,
     marginBottom: 12,
-    backgroundColor: '#a259f7',
-    borderRadius: 12,
+    backgroundColor: '#fff',
+    borderRadius: 16,
     justifyContent: 'center',
-    alignItems: 'center',
     elevation: 2,
     shadowColor: '#000',
-    shadowOpacity: 0.08,
-    shadowRadius: 4,
-    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 4 },
+    borderLeftWidth: 4,
+    borderLeftColor: '#a259f7',
   },
-  itemText: {
-    fontSize: 18,
-    color: '#333',
+  itemContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 16,
   },
-    title: {
+  itemNumber: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#a259f7',
+    marginRight: 12,
+    width: 32,
+  },
+  itemTextContainer: {
+    flex: 1,
+  },
+  title: {
     fontSize: 18,
+    fontWeight: '600',
     color: '#333',
+    marginBottom: 4,
+  },
+  subtitle: {
+    fontSize: 14,
+    color: '#666',
   },
 });

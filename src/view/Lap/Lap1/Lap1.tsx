@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, ScrollView } from 'react-native'
+import { StyleSheet, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import Header from '../../../component/lap/lap1/Header'
 import SectionView from '../../../component/lap/lap1/SectionView'
@@ -24,22 +24,22 @@ const Lap1 = () => {
             <Header
                 title="Trang chủ"
                 onBackPress={() => console.log('Back pressed')}
-                imageSource={require('../../../assets/raiden.webp')}
+                imageSource={{ uri: 'https://i.imgur.com/0y8Ftya.jpg' }}
             />
             <Header
                 // title="Lap 1"
                 onBackPress={() => console.log('Back pressed')}
-                imageSource={require('../../../assets/raiden.webp')}
+                imageSource={{ uri: 'https://i.imgur.com/0y8Ftya.jpg' }}
             />
             <Header
                 title="Lap 1"
                 // onBackPress={() => console.log('Back pressed')}
-                imageSource={require('../../../assets/raiden.webp')}
+                imageSource={{ uri: 'https://i.imgur.com/0y8Ftya.jpg' }}
             />
             <Header
                 title="Lap 1"
                 onBackPress={() => console.log('Back pressed')}
-            // imageSource={require('../../../assets/raiden.webp')}
+            // imageSource={{ uri: 'https://i.imgur.com/0y8Ftya.jpg' }}
             />
             <SectionView
                 diaDiemLabel="Địa điểm"
@@ -51,7 +51,7 @@ const Lap1 = () => {
                 thoiGianDiChuyenLabel="Thời gian di chuyển"
                 thoiGianDiChuyen="30 phút"
                 hinhAnhLabel="Hình ảnh"
-                hinhAnh={require('../../../assets/raiden.webp')}
+                hinhAnh={{uri: 'https://photo.znews.vn/w660/Uploaded/mdf_eioxrd/2021_07_06/2.jpg'}}
             />
             <SectionView
                 diaDiemLabel="Địa điểm"
@@ -72,14 +72,6 @@ const Lap1 = () => {
                 placeholder="Nhập email"
                 error={emailError}
             />
-             <Input
-                title="Email"
-                value={email}
-                onChangeText={setEmail}
-                placeholder="Nhập email"
-                error={emailError}
-            />
-            
         </ScrollView>
     )
 }

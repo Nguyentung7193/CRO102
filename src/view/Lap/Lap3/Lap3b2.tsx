@@ -21,7 +21,7 @@ const Lap3b2 = () => {
   });
   const scale = scrollY.interpolate({
     inputRange,
-    outputRange: [1, 1, 1, 0.5], // Thu nhỏ lại khi cuộn
+    outputRange: [1, 1, 1, 0.5],
   });
 
   return (
@@ -29,7 +29,13 @@ const Lap3b2 = () => {
       styles.item,
       { opacity, transform: [{ translateY }, { scale }] }
     ]}>
-      <Text style={styles.title}>{item.title}</Text>
+      <View style={styles.itemContent}>
+        <Text style={styles.itemNumber}>{index + 1}</Text>
+        <View style={styles.itemTextContainer}>
+          <Text style={styles.title}>Item {item.title}</Text>
+          <Text style={styles.subtitle}>Tap to view details</Text>
+        </View>
+      </View>
     </Animated.View>
   );
 };
@@ -55,25 +61,48 @@ export default Lap3b2;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fafafa',
+    backgroundColor: '#f5f5f5',
     marginTop: 20,
   },
   item: {
-    height: 80,
+    height: 90,
     marginHorizontal: 16,
     marginBottom: 12,
-    backgroundColor: '#a259f7',
-    borderRadius: 12,
+    backgroundColor: '#fff',
+    borderRadius: 16,
     justifyContent: 'center',
-    alignItems: 'center',
-    elevation: 2,
+    elevation: 4,
     shadowColor: '#000',
-    shadowOpacity: 0.08,
-    shadowRadius: 4,
-    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 4 },
+    borderLeftWidth: 6,
+    borderLeftColor: '#a259f7',
+  },
+  itemContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+  },
+  itemNumber: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#a259f7',
+    marginRight: 16,
+    width: 36,
+    textAlign: 'center',
+  },
+  itemTextContainer: {
+    flex: 1,
   },
   title: {
     fontSize: 18,
+    fontWeight: '600',
     color: '#333',
+    marginBottom: 4,
+  },
+  subtitle: {
+    fontSize: 14,
+    color: '#666',
   },
 });
