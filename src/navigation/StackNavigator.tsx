@@ -10,6 +10,8 @@ import Lap3b2 from '../view/Lap/Lap3/Lap3b2';
 import Lap3b3 from '../view/Lap/Lap3/Lap3b3';
 import CameraComponent from '../demo/sl4/CameraComponent';
 import MusicPlayerScreen from '../demo/sl4/ MusicPlayerScreen';
+import CountScreen from '../demo/sl5/redux/screens/countScreen';
+import ProductListScreen from '../demo/sl5/screens/ProductListScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -23,13 +25,16 @@ export type RootStackParamList = {
   demoAnimation: undefined;
   CameraComponent: undefined;
   MusicPlayer: undefined;
+  // slide 5
+  countScreen: undefined;
+  ProductListScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="Lap3b3" screenOptions={{ headerShown: false }}>
+    <Stack.Navigator initialRouteName="ProductListScreen" screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Lap1" component={Lap1} />
       <Stack.Screen name="Lap2" component={Lap2} />
@@ -41,7 +46,13 @@ const StackNavigator = () => {
       {/* slide 4 */}
       <Stack.Screen name="CameraComponent" component={CameraComponent} />
       <Stack.Screen name="MusicPlayer" component={MusicPlayerScreen} />
+      {/* Slide5 */}
+      <Stack.Screen name="countScreen" component={CountScreen} />
+      <Stack.Screen name="ProductListScreen" component={ProductListScreen} />
+      {/* Add other screens here */}
+      {/* <Stack.Screen name="Detail" component={DetailScreen} /> */}
     </Stack.Navigator>
+      
   );
 };
 

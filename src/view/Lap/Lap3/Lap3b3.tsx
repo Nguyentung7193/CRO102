@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useRef } from 'react';
 import { StyleSheet, Text, View, Image, Animated, FlatList, Dimensions } from 'react-native';
 
