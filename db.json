@@ -1,16 +1,76 @@
 {
-  "product": [
+  "Nhanvien": [
     {
-      "id": "3",
-      "name": "Updated Product",
-      "price": 209.99,
-      "image": "https://toquoc.mediacdn.vn/280518851207290880/2021/9/3/base64-1630595438805599368242-1630639676186-1630639676357733744119.png"
+      "maNV": 1,
+      "phongBan": "IT",
+      "diaChi": "123 Street, City",
+      "sdt": "0123456789",
+      "id": "8bdf"
     },
     {
-      "id": "4",
-      "name": "Updated Product",
-      "price": 109.99,
-      "image": "https://toquoc.mediacdn.vn/280518851207290880/2021/9/3/base64-1630595438805599368242-1630639676186-1630639676357733744119.png"
+      "maNV": 2,
+      "phongBan": "HR",
+      "diaChi": "456 Avenue, City",
+      "sdt": "0987654321",
+      "id": "3035"
+    },
+    {
+      "maNV": 3,
+      "phongBan": "Finance",
+      "diaChi": "789 Boulevard, City",
+      "sdt": "1234567890",
+      "id": "3c2e"
+    }
+  ],
+  "Character": [
+    {
+      "id": "1",
+      "name": "Raiden One",
+      "image": "https://assetsio.gnwcdn.com/Genshin-Impact-Raiden-Shogun-splash-art-1.jpg?width=414&quality=70&format=jpg&auto=webp",
+      "land": "Inazuma",
+      "des": "Description for Raiden one"
+    },
+    {
+      "id": "2",
+      "name": "Raiden Two",
+      "image": "https://assetsio.gnwcdn.com/Genshin-Impact-Raiden-Shogun-splash-art-1.jpg?width=414&quality=70&format=jpg&auto=webp",
+      "land": "Inazuma",
+      "des": "Description for Raiden two"
+    },
+    {
+      "id": "3",
+      "name": "Raiden Three",
+      "image": "https://assetsio.gnwcdn.com/Genshin-Impact-Raiden-Shogun-splash-art-1.jpg?width=414&quality=70&format=jpg&auto=webp",
+      "land": "Inazuma",
+      "des": "Description for Raiden three"
+    },
+    {
+      "id": "1754374321770",
+      "name": "New Character",
+      "land": "New Land",
+      "des": "New Description",
+      "image": "https://assetsio.gnwcdn.com/Genshin-Impact-Raiden-Shogun-splash-art-1.jpg?width=414&quality=70&format=jpg&auto=webp"
+    },
+    {
+      "id": "1754374322408",
+      "name": "New Character",
+      "land": "New Land",
+      "des": "New Description",
+      "image": "https://assetsio.gnwcdn.com/Genshin-Impact-Raiden-Shogun-splash-art-1.jpg?width=414&quality=70&format=jpg&auto=webp"
+    },
+    {
+      "id": 1754544416653,
+      "name": "Test 1",
+      "land": "Land 1",
+      "des": "Mota 1",
+      "image": "anh1"
+    },
+    {
+      "id": 1754545015221,
+      "name": "Test add 1",
+      "land": "Test add land 1",
+      "des": "Test 1",
+      "image": "adjddd"
     }
   ]
 }

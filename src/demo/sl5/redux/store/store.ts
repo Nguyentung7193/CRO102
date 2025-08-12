@@ -2,12 +2,16 @@
 import {configureStore} from '@reduxjs/toolkit';
 import countReducer from '../reducers/count';
 import productReducer from '../reducers/poductReduces';
+import nhanvienReducer from '../../../../view/Lap/Lap5/reduces/nhanvienReducer';
+import characterReducer from '../../../../view/Lap/Lap6/reduces/charaterReducer';
 
 
 const store = configureStore({
     reducer: {
         count: countReducer,
         product: productReducer,
+        nhanvien: nhanvienReducer,
+        character: characterReducer,
 
     },
 });

@@ -12,6 +12,13 @@ import CameraComponent from '../demo/sl4/CameraComponent';
 import MusicPlayerScreen from '../demo/sl4/ MusicPlayerScreen';
 import CountScreen from '../demo/sl5/redux/screens/countScreen';
 import ProductListScreen from '../demo/sl5/screens/ProductListScreen';
+import NhanVienScreen from '../view/Lap/Lap5/screen/NhanVienScreen';
+import loginWithFirebase from '../demo/sl6/firebase/loginWithFirebase';
+import CharaterScreen from '../view/Lap/Lap6/screen/charaterScreen';
+import loginWithGoogle from '../demo/sl6/firebase/loginWithGoogle';
+import LoginScreen from '../view/Lap/Lap7/logiScreen';
+import RegisterScreen from '../view/Lap/Lap7/registerScreen';
+import AddCharaterScreen from '../view/Lap/Lap6/screen/addCharaterScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -28,13 +35,22 @@ export type RootStackParamList = {
   // slide 5
   countScreen: undefined;
   ProductListScreen: undefined;
+  NhanVienScreen: undefined;
+  CharaterScreen: undefined;
+  AddCharaterScreen: undefined;
+
+  loginWithFirebase: undefined;
+  loginWithGoogle: undefined;
+  // lap7
+  loginScreen: undefined;
+  RegisterScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="ProductListScreen" screenOptions={{ headerShown: false }}>
+    <Stack.Navigator initialRouteName="loginScreen" screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Lap1" component={Lap1} />
       <Stack.Screen name="Lap2" component={Lap2} />
@@ -51,6 +67,14 @@ const StackNavigator = () => {
       <Stack.Screen name="ProductListScreen" component={ProductListScreen} />
       {/* Add other screens here */}
       {/* <Stack.Screen name="Detail" component={DetailScreen} /> */}
+      <Stack.Screen name="NhanVienScreen" component={NhanVienScreen} />
+      <Stack.Screen name="CharaterScreen" component={CharaterScreen} />
+      <Stack.Screen name="AddCharaterScreen" component={AddCharaterScreen} />
+      <Stack.Screen name="loginWithFirebase" component={loginWithFirebase} />
+      <Stack.Screen name="loginWithGoogle" component={loginWithGoogle} />
+      {/* Lap 7 */}
+      <Stack.Screen name="loginScreen" component={LoginScreen} />
+            <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
     </Stack.Navigator>
       
   );
